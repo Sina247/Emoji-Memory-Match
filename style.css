@@ -1,0 +1,88 @@
+:root {
+  --primary: #2d2d2d;
+  --accent: #4caf50;
+  --matched: #2196f3;
+  --bg: #e0e0e0;
+  --shadow-light: #ffffff;
+  --shadow-dark: #bebebe;
+  --font: "Fredoka", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--bg);
+  border-radius: 30px;
+  box-shadow: 10px 10px 30px var(--shadow-dark), -10px -10px 30px var(--shadow-light);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.score {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: var(--primary);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card.revealed {
+  background-color: var(--accent);
+}
+
+.card.matched {
+  background-color: var(--matched);
+  cursor: default;
+}
+
+.win-message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 15px;
+  display: none;
+}
